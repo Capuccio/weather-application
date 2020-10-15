@@ -1,0 +1,11 @@
+.card {
+	max-width: 50%;
+	margin: auto;
+}
+
+.card__column {
+	float: left;
+	width: 50%;
+	text-align: center;
+	border: 1px solid red;
+}

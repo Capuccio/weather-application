@@ -1,5 +1,5 @@
 .card {
-	max-width: 50%;
+	max-width: 80%;
 	margin: auto;
 }
 
@@ -8,4 +8,29 @@
 	width: 50%;
 	text-align: center;
 	border: 1px solid red;
+}
+
+.card__separator {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.card__separator::before,
+.card__separator::after {
+	content: "";
+	flex: 1;
+	border-bottom: 1px solid #000;
+	border: 0.5px solid rgba(200, 207, 202, 0.5);
+}
+
+.card__separator::before {
+	margin-right: 0.2in;
+	margin-left: 1.2in;
+}
+
+.card__separator::after {
+	margin-right: 1.2in;
+	margin-left: 0.2in;
 }

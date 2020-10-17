@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { message } from "antd";
 
 import "./css/App.css";
 
@@ -19,6 +20,10 @@ function App() {
 		});
 	};
 
+	const submitData = () => {
+		message.info(`User: ${form.username} \n Pass: ${form.password}`);
+	};
+
 	return (
 		<div className="card__background">
 			<div className="card">
@@ -27,6 +32,7 @@ function App() {
 						rememberMe={rememberMe}
 						handleLoginForm={handleLoginForm}
 						formData={form}
+						submitData={submitData}
 					/>
 					<div className="card__separator">or</div>
 				</div>

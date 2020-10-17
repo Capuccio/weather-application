@@ -9,7 +9,7 @@ import {
 
 import "./css/LoginForm.css";
 
-const LoginForm = ({ rememberMe, handleLoginForm, formData }) => {
+const LoginForm = ({ rememberMe, handleLoginForm, formData, submitData }) => {
 	const [screenSize, setScreenSize] = useState(null);
 	const [optionsBelow, setOptionsBelow] = useState({
 		size: 110,
@@ -57,12 +57,14 @@ const LoginForm = ({ rememberMe, handleLoginForm, formData }) => {
 				rules={[{ required: true, message: "Debe colocar su clave" }]}
 			>
 				<Input.Password
+					name="password"
 					placeholder="Password"
 					prefix={<LockOutlined />}
 					value={formData.password}
 					iconRender={(visible) =>
 						visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
 					}
+					onChange={(e) => handleLoginForm(e)}
 					style={inputStyle}
 				/>
 			</Form.Item>
@@ -70,11 +72,11 @@ const LoginForm = ({ rememberMe, handleLoginForm, formData }) => {
 			<Space size={optionsBelow.size} direction={optionsBelow.direction}>
 				<Checkbox onChange={rememberMe}>Remember me</Checkbox>
 				{screenSize <= 425 ? (
-					<Button type="primary" size="large" block>
+					<Button type="primary" size="large" onClick={submitData} block>
 						LOGIN
 					</Button>
 				) : (
-					<Button type="primary" size="large">
+					<Button type="primary" size="large" onClick={submitData}>
 						LOGIN
 					</Button>
 				)}

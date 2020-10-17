@@ -20,7 +20,7 @@ function App() {
 	};
 
 	return (
-		<div className="prueba">
+		<div className="card__background">
 			<div className="card">
 				<div className="card__column">
 					<LoginForm

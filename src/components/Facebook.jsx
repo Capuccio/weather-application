@@ -1,18 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import { FacebookFilled } from "@ant-design/icons";
 
 import "./css/Facebook.css";
 
-const Facebook = (props) => {
-	useEffect(() => {
-		console.log(JSON.parse(sessionStorage.getItem("fbssls_1797775070371875")));
-	}, []);
-
-	const responseFacebook = (response) => {
-		console.log(response);
-	};
-
+const Facebook = ({ responseFacebook }) => {
 	return (
 		<FacebookLogin
 			appId="1797775070371875"

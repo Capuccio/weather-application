@@ -12,7 +12,7 @@
 	background-size: 100% 60%;
 }
 
-.testI {
+.weatherImageBg {
 	background-image: url("https://i1.wp.com/conocenewyork.com/wp-content/uploads/2016/09/empire2.jpg?zoom=2&resize=920%2C425");
 	background-position: center;
 	filter: brightness(70%);

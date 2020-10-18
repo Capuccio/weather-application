@@ -4,10 +4,11 @@ import "./css/Navbar.css";
 import Logo from "../assets/clouds.svg";
 
 const Navbar = (props) => {
+
 	return (
 		<div className="navbar">
 			<div className="navbar__logo">
-				<img src={Logo} />
+				<img src={Logo} alt="Logo Company"/>
 			</div>
 
 			<div className="navbar__options">

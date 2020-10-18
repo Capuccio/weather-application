@@ -1,7 +1,7 @@
 import React from "react";
 import { Input } from "antd";
 
-const SearchCity = ({ searchCity }) => {
+const SearchCity = ({ searchCity, loading }) => {
 	let styleDiv = {
 		width: "70%",
 		margin: "4% auto"
@@ -16,6 +16,7 @@ const SearchCity = ({ searchCity }) => {
 			<Input.Search
 				placeholder="Find your location..."
 				size="large"
+				loading={loading}
 				onSearch={searchCity}
 				style={searchStyle}
 			/>

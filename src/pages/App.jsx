@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { message } from "antd";
 
-import "./css/App.css";
-
 import LoginForm from "../components/LoginForm";
+import SocialLogin from "../components/SocialLogin";
+
+import "./css/App.css";
 
 function App() {
 	const [form, setForm] = useState({
@@ -35,6 +36,7 @@ function App() {
 						submitData={submitData}
 					/>
 					<div className="card__separator">or</div>
+					<SocialLogin />
 				</div>
 				<div className="card__column card__column--right">
 					<img

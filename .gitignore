@@ -3,6 +3,8 @@
 # VIM
 *.swp
 
+.env
+
 # dependencies
 /node_modules
 /.pnp

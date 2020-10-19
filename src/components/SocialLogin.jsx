@@ -16,7 +16,9 @@ const SocialLogin = (props) => {
 	}, [history]);
 
 	const responseFacebook = (response) => {
-		console.log(response);
+		if('accessToken' in response) {
+			history.push("/weather");
+		}
 	};
 
 	return (

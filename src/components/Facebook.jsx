@@ -4,10 +4,12 @@ import { FacebookFilled } from "@ant-design/icons";
 
 import "./css/Facebook.css";
 
+const KEY_FACEBOOK = process.env.REACT_APP_KEY_FACEBOOK;
+
 const Facebook = ({ responseFacebook }) => {
 	return (
 		<FacebookLogin
-			appId="1797775070371875"
+			appId={KEY_FACEBOOK}
 			autoLoad={false}
 			fields="name, email, picture"
 			language="es_ES"

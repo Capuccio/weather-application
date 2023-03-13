@@ -10,9 +10,7 @@ const DotEnv = require('dotenv-webpack')
 module.exports = {
 	entry: './src/index.tsx',
 	plugins: [
-		new DotEnv({
-			path: path.resolve(__dirname, '.env'),
-		}),
+		new DotEnv(),
 		new InterpolateHtmlPlugin({
 			PUBLIC_URL: 'static',
 		}),

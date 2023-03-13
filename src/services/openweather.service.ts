@@ -2,7 +2,6 @@ import { abortController } from '@/utilities'
 
 export const getCityGeocoding = (city: string) => {
 	const controller = abortController();
-	console.log(process.env.API_KEY)
 	return { call: fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=${process.env.API_KEY}`, { signal: controller.signal }), controller }
 }
 

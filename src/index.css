@@ -1,3 +1,14 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	box-sizing: border-box;
+	font-family: 'Rubik', sans-serif;
+}
+
+html {
+	background-color: #f6f6f6;
 }

@@ -13,6 +13,7 @@
 	},
 	"scripts": {
 		"dev": "webpack serve -c webpack.dev.js",
+		"build": "webpack -c webpack.prod.js",
 		"test": "jest"
 	},
 	"eslintConfig": {

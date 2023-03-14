@@ -2,9 +2,9 @@ import { useState } from 'react'
 
 import { LoadingComponents } from '@/components'
 import { cityInfo } from '@/models';
-import { useLoadAndFetch } from '@/hooks';
+import { useAsyncEffect, useLoadAndFetch } from '@/hooks';
 import { getCurrentWeather, getForecast } from '@/services';
-import { filterForecastByDays, weatherIcon } from '@/utilities'
+import { filterForecastByDays, getUserLocation, weatherIcon } from '@/utilities'
 import { mockForecastList } from '@/__mocks__';
 
 import { CardForecastList, SearchBar } from './components'
@@ -25,12 +25,19 @@ export default function Dashboard() {
 			list: mockForecastList,
 		}
 	})
-	
+
 	const requestWeatherHandler = async (city: cityInfo) => {
 		const resultWeather = await startCalling(getCurrentWeather(city.lat, city.lon));
 		const resultForecast = await startCalling(getForecast(city.lat, city.lon));
-		setCityWeather({ name: city.name, weather: resultWeather, forecast: resultForecast });
+		setCityWeather({ name: resultWeather.name, weather: resultWeather, forecast: resultForecast });
 	}
+
+	const requestWeatherByUserLocation = async () => {
+		const coords: any  = await getUserLocation();
+		return { lat: coords.latitude, lon: coords.longitude };
+	}
+
+	useAsyncEffect(requestWeatherByUserLocation, requestWeatherHandler, () => {}, []);
 
 	return (
 	<div className="mx-auto w-5/12">

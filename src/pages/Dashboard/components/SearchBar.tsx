@@ -11,7 +11,7 @@ interface SearchProps {
 }
 
 export default function SearchBar(props: SearchProps) {
-	const { startCalling } = useLoadAndFetch()
+	const { loading, startCalling } = useLoadAndFetch()
 	const [inputSearchFocused, setInputSearchFocused] = useState(false)
 	const [cityInput, setCityInput] = useState<string>("");
 	const [geoList, setGeoList] = useState([]);
@@ -38,7 +38,11 @@ export default function SearchBar(props: SearchProps) {
 	return (
 		<div className='my-3 relative'>
 			<div className={`flex p-3 bg-white-card shadow-card ${inputSearchFocused && geoList.length > 0 ? 'rounded-t-3xl' : 'rounded-3xl'}`}>
-				<img className='opacity-75' width={25} src={searchIcon} />
+				{loading ? (
+					<div className='w-5 h-5 border-zinc-400 border-b-transparent border-2 rounded-full animate-spin' />
+				) : (
+					<img className='opacity-75' width={25} src={searchIcon} />
+				)}
 				<input value={cityInput} className='w-full ml-4 bg-transparent outline-0' type="text" placeholder='Search city' onBlur={onClickAndOnBlurHandler} onClick={onClickAndOnBlurHandler} onChange={onChangeHandler} onKeyUp={onKeyUpHandler} />
 			</div>
 			<div className={`w-full z-10 absolute ${(inputSearchFocused && geoList.length) ? 'block' : 'hidden'} shadow-list bg-white-card rounded-b-3xl`}>

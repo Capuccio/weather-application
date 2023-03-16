@@ -6,3 +6,4 @@ export * from "./get-day";
 export * from "./get-hour-or-system.utility";
 export * from "./filter-forecast-by-days.utility";
 export * from "./get-user-location.utility";
+export * from "./get-actual-date.utility";

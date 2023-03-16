@@ -40,7 +40,7 @@ export default function Dashboard() {
 	useAsyncEffect(requestWeatherByUserLocation, requestWeatherHandler, () => {}, []);
 
 	return (
-	<div className="mx-auto w-5/12">
+	<div className="mx-auto w-11/12 md:w-9/12 lg:w-7/12 xl:w-5/12">
 		<SearchBar requestWeatherHandler={requestWeatherHandler} />
 		<div style={{ backgroundImage: cityWeather.weather.weather[0].icon.includes("d") ? backgroundImageStyle.day : backgroundImageStyle.night }} className={`my-3 relative shadow-card bg-white-card rounded-[2.5rem] p-10`}>
 			<LoadingComponents loading={loading} />

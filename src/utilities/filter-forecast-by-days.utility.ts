@@ -1,3 +1,5 @@
+import { getActualDate } from './'
+
 const groupForecastList = (forecastList: Array<any>) => {
 	return forecastList.reduce((group, forecast) => {
 		const dateSplitted = forecast.dt_txt.split(" ");
@@ -8,9 +10,8 @@ const groupForecastList = (forecastList: Array<any>) => {
 }
 
 export const filterForecastByDays = (forecastList: any[]) => {
-	let forecastFiltered: any[] = [];
-	const forecastGrouped = groupForecastList(forecastList)
-	return Object.keys(forecastGrouped)
-											.slice(1)
-											.map((prueba) => forecastGrouped[prueba][Math.floor(forecastGrouped[prueba].length / 2)]);
+	let forecastGrouped = groupForecastList(forecastList)
+	const actualDate = getActualDate();
+	if (Object.keys(forecastGrouped)[0] === actualDate) forecastGrouped.slice(1)
+	return Object.keys(forecastGrouped).map((prueba) => forecastGrouped[prueba][Math.floor(forecastGrouped[prueba].length / 2)]);
 	}

@@ -36,7 +36,7 @@ export default function SearchBar(props: SearchProps) {
 	}	
 
 	return (
-		<div className='my-3 relative'>
+		<div className='my-5 relative'>
 			<div className={`flex p-3 bg-white-card shadow-card ${inputSearchFocused && geoList.length > 0 ? 'rounded-t-3xl' : 'rounded-3xl'}`}>
 				{loading ? (
 					<div className='w-5 h-5 border-zinc-400 border-b-transparent border-2 rounded-full animate-spin' />

@@ -10,8 +10,6 @@ module.exports = merge(commonConfig, {
 	devtool: 'inline-source-map',
 	plugins: [new ReactRefreshWebpackPlugin()],
 	devServer: {
-		https: true,
-		host: "0.0.0.0",
 		compress: true,
 		port: 5000,
 		historyApiFallback: true,

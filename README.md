@@ -1,11 +1,5 @@
-Application created with React & Webpack.
-
-## Getting Started 🚀
-Run this project with:
-```bash
-npm run dev
-```
-And will open a new [localhost](http://localhost:5000/) browser tab
+## Weather Application
+This app was created with React & Webpack to request cities weather using [Open Weather](https://openweathermap.org/) API.
 
 ## UI/UX 🎨
 This project was based on [João Borges](https://dribbble.com/joaobborges) UI

@@ -13,7 +13,7 @@ import thunderstormIcon from '../assets/forecastIcon/11.png'
 import snowIcon from '@/assets/forecastIcon/13.png';
 import mistIcon from '@/assets/forecastIcon/50.png';
 
-export const forecastIcon = {
+export const forecastIcon: {[index: string]: any} = {
 	'01d': sunIcon,
 	'02d': sunCloudIcon,
 	'03d': scatteredCloudsIcon,

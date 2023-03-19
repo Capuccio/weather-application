@@ -12,8 +12,6 @@ const groupForecastList = (forecastList: Array<any>) => {
 export const filterForecastByDays = (forecastList: any[]) => {
 	let forecastGrouped = groupForecastList(forecastList);
 	const actualDate = getActualDate();
-	//console.log(forecastGrouped)
-	//console.log(forecastGrouped.slice(1))
 	if (Object.keys(forecastGrouped)[0] === actualDate) delete forecastGrouped[actualDate];
 	return Object.keys(forecastGrouped).map((prueba) => forecastGrouped[prueba][Math.floor(forecastGrouped[prueba].length / 2)]);
 	}

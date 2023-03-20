@@ -11,6 +11,7 @@ test('get day by date', () => {
 test('get user location', async () => {
 	const coords = await uti.getUserLocation()
 	expect(coords).toStrictEqual({ latitude: -0.212992, longitude: -78.430208 });
+	jest.restoreAllMocks();
 })
 
 describe("Utilities", () => {

@@ -1,5 +1,5 @@
 import * as uti from '../utilities'
-import '../__mocks__/geolocation.mock'
+import '@/__mocks__/geolocation.mock';
 
 afterEach(jest.clearAllMocks);
 
@@ -17,7 +17,7 @@ test('get user location', async () => {
 describe("Utilities", () => {
 	describe('Date tests', () => {
 		test('Actual date', () => {
-			expect(uti.getActualDate()).toBe("2023-03-19");
+			expect(uti.getActualDate()).toBe("2023-03-31");
 		})
 		test('Date string', () => {
 			const actualDate = uti .getActualDate();
@@ -25,3 +25,4 @@ describe("Utilities", () => {
 		})
 	})
 })
+

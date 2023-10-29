@@ -29,7 +29,7 @@ module.exports = {
 			{
 				test: /\.(ts|tsx)$/,
 				exclude: /node_modules/,
-				use: 'babel-loader',
+				use: 'swc-loader',
 			},
 			{
 				test: /\.css$/i,

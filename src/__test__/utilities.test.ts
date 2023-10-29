@@ -1,7 +1,9 @@
 import * as uti from '../utilities'
 import '@/__mocks__/geolocation.mock';
 
-afterEach(jest.clearAllMocks);
+afterAll(jest.clearAllMocks);
+
+jest.useFakeTimers().setSystemTime(new Date("2023-03-31 00:00:00"));
 
 test('get day by date', () => {
 	// should have 00:00:00 to exact day, If not will return the day before

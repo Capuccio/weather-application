@@ -6,7 +6,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["src/*"],
     },
     "allowJs": false,
     "outDir": "./build",
@@ -15,5 +15,4 @@
     "strict": true,
     "skipLibCheck": true,
   },
-  "include": ["src"],
 }
